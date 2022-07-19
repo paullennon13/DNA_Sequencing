@@ -163,10 +163,11 @@ public class LinkedList<T> {
         }
 
         StringBuilder string = new StringBuilder();
-        Node node = firstNode;
+        Node<T> node = firstNode;
 
         while(node.getNextNode() != null){
-            string.append(node.getData() + ", ");
+            string.append(node.getData());
+            string.append(", ");
             node = node.getNextNode();
         }
         string.append(node.getData());
