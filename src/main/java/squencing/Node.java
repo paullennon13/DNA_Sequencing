@@ -20,6 +20,11 @@ public class Node<T> {
     public boolean setNext(Node<T> nextNode) {
         boolean result = false;
 
+        if(nextNode == null){
+            this.nextNode = null;
+            return true;
+        }
+
         this.nextNode = nextNode;
         result = nextNode.setLast(this);
 
