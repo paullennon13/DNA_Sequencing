@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427387b7-b0c4-4ccc-b6c4-91bf59d2029c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="427387b7-b0c4-4ccc-b6c4-91bf59d2029c" name="Changes" comment="comments">
+      <change afterPath="$PROJECT_DIR$/src/main/java/squencing/Sequencer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/squencing/LinkedHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/LinkedHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/squencing/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Squencer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="squencing.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="squencing.Test" />
       <module name="DNA_Sequencing" />
       <extension name="coverage">
@@ -85,8 +84,18 @@
       <updated>1658197547516</updated>
       <workItem from="1658197553249" duration="4685000" />
       <workItem from="1658237581222" duration="4320000" />
-      <workItem from="1658254078636" duration="7067000" />
+      <workItem from="1658254078636" duration="12942000" />
+      <workItem from="1658504030344" duration="3520000" />
+      <workItem from="1658507887676" duration="2266000" />
     </task>
+    <task id="LOCAL-00001" summary="comments">
+      <created>1658341524352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658341524352</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,5 +111,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments" />
   </component>
 </project>

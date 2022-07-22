@@ -37,13 +37,13 @@ public class LinkedHeap<T> {
         // Finds element in list
         for (i = 0; i < size; i++)
         {
-            if (entry.equals(list.getIndex(i)))
+            if (entry.equals(list.get(i)))
                 break;
         }
 
         // Sets element as last in list
-        T temp = list.getIndex(i);
-        list.set(list.getIndex(size-1), i);
+        T temp = list.get(i);
+        list.set(list.get(size-1), i);
         list.set(temp, size-1);
 
         // Removes element and sorts heap
@@ -62,14 +62,14 @@ public class LinkedHeap<T> {
         int largest = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
-        if (l < size && (int) list.getIndex(l) > (int) list.getIndex(largest))
+        if (l < size && (int) list.get(l) > (int) list.get(largest))
             largest = l;
-        if (r < size && (int) list.getIndex(r) > (int) list.getIndex(largest))
+        if (r < size && (int) list.get(r) > (int) list.get(largest))
             largest = r;
 
         if (largest != i) {
-            T temp = list.getIndex(largest);
-            list.set(list.getIndex(i), largest);
+            T temp = list.get(largest);
+            list.set(list.get(i), largest);
             list.set(temp, i);
 
             heapSort(largest);

@@ -40,7 +40,7 @@ public class LinkedList<T> {
     }
 
     // adds element at given index
-    public void addAtIndex(T entry, int index){
+    public void add(T entry, int index){
         Node<T> node = firstNode;
         Node<T> newNode = new Node<>(entry);
         Node<T> lastNode;
@@ -173,7 +173,7 @@ public class LinkedList<T> {
         return index;
     }
 
-    public T getIndex(int index){
+    public T get(int index){
         Node<T> node = firstNode;
 
         if(index > numEntries){
@@ -205,7 +205,7 @@ public class LinkedList<T> {
             return null;
         }
 
-        StringBuilder string = new StringBuilder();
+        StringBuilder string = new StringBuilder("{ ");
         Node<T> node = firstNode;
 
         while(node.getNextNode() != null){
@@ -214,6 +214,7 @@ public class LinkedList<T> {
             node = node.getNextNode();
         }
         string.append(node.getData());
+        string.append(" }");
 
         return string.toString();
     }
