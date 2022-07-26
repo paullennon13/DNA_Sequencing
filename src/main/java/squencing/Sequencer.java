@@ -22,10 +22,10 @@ public class Sequencer {
             LinkedList<Integer> temp = new LinkedList<>(sequence(i,0));
             temp.addLast(i);
             for(int j = 0; j < matches.getSize(); j++){
-                if(temp.get(0) > matches.get(j).get(0)){
+                if(temp.get(0).compareTo(matches.get(j).get(0)) < 0){
                     matches.add(temp, j);
                 }
-                else if(temp.get(0) == matches.get(j).get(0)){
+                else if(temp.get(0).compareTo(matches.get(j).get(0)) == 0){
                     matches.get(j).addLast(i);
                 }
             }

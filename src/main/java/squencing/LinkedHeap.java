@@ -1,7 +1,7 @@
 package squencing;
 
 // Linked Heap
-public class LinkedHeap<T> {
+public class LinkedHeap<T extends Number> {
     // data storage
     private LinkedList<T> list;
 
