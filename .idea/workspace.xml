@@ -10,11 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="427387b7-b0c4-4ccc-b6c4-91bf59d2029c" name="Changes" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DNA_Sequencing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DNA_Sequencing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/LinkedHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/LinkedHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Sequencer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Sequencer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,36 +173,17 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Local">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="debugHost" value="localhost" />
-      <option name="architecture" />
-      <option name="environmentVariables">
-        <map />
-      </option>
-      <option name="handler" />
-      <option name="image" value="false" />
-      <option name="logicalFunctionName" />
-      <option name="memorySize" value="128" />
-      <option name="pathMappings">
-        <list />
-      </option>
-      <option name="platform" />
-      <option name="runtime" />
-      <option name="templateFile" />
-      <option name="timeout" value="300" />
-      <option name="useTemplate" value="false" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <sam>
-        <option name="additionalBuildArgs" />
-        <option name="additionalLocalArgs" />
-        <option name="buildInContainer" value="false" />
-        <option name="dockerNetwork" />
-        <option name="skipImagePull" value="false" />
-      </sam>
-      <method v="2" />
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.Test" />
@@ -232,7 +210,8 @@
       <workItem from="1658507887676" duration="4519000" />
       <workItem from="1658512784718" duration="11000" />
       <workItem from="1658513048546" duration="188000" />
-      <workItem from="1658751440486" duration="6518000" />
+      <workItem from="1658751440486" duration="6724000" />
+      <workItem from="1658844374510" duration="525000" />
     </task>
     <task id="LOCAL-00001" summary="comments">
       <created>1658341524352</created>
@@ -248,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658510660972</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updates">
+      <created>1658843029424</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658843029424</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
