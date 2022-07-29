@@ -3,11 +3,7 @@ package squencing;
 public class Sequencer {
     private String dnaSequence;
     private String dnaToMatch;
-    private LinkedList<LinkedList<Integer>> matches;
-
-    Sequencer(){
-        this(null, null);
-    }
+    private LinkedList<LinkedList<Integer>> matches = new LinkedList<>();
 
     Sequencer(String dnaSequence, String dnaToMatch){
         if(dnaToMatch.length() > dnaSequence.length()){
@@ -22,7 +18,10 @@ public class Sequencer {
             LinkedList<Integer> temp = new LinkedList<>(sequence(i,0));
             temp.addLast(i);
             for(int j = 0; j < matches.getSize(); j++){
-                if(temp.get(0).compareTo(matches.get(j).get(0)) < 0){
+                if(matches.get(0).get(0) == null){
+                    matches.add(temp, 0);
+                }
+                else if(temp.get(0).compareTo(matches.get(j).get(0)) > 0){
                     matches.add(temp, j);
                 }
                 else if(temp.get(0).compareTo(matches.get(j).get(0)) == 0){
@@ -35,13 +34,16 @@ public class Sequencer {
     public int sequence(int index, int index1){
         int count = 0;
 
+        try {
             char a = dnaSequence.charAt(index1);
             char b = dnaToMatch.charAt(index);
-            if(a == b){
+            if (a == b) {
                 count++;
                 count += sequence(index + 1, index1 + 1);
             }
-
+        }catch(StringIndexOutOfBoundsException e){
+            return count;
+        }
         return count;
     }
 
@@ -62,7 +64,10 @@ public class Sequencer {
         int j = 0;
         int k = 1;
         for(int i = 0; i < 10; i++){
-            if(k > matches.get(j).getSize()){
+            if(matches.get(j) == null){
+                break;
+            }
+            else if(k > matches.get(j).getSize()){
                 k = 1;
                 j++;
             }
@@ -71,7 +76,6 @@ public class Sequencer {
             string.append(dnaSequence.substring(startIndex, (startIndex + length ) - 1));
             k++;
         }
-
 
         return string.toString();
     }
