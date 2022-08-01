@@ -202,6 +202,7 @@ public class LinkedList<T> {
         return index;
     }
 
+    // get data from index index
     public T get(int index){
         Node<T> node = firstNode;
 
