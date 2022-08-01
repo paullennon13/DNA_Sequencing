@@ -1,8 +1,8 @@
 package squencing;
 
 public class Sequencer {
-    private String dnaSequence;
-    private String dnaToMatch;
+    private final String dnaSequence;
+    private final String dnaToMatch;
     private LinkedList<LinkedList<Integer>> matches = new LinkedList<>();
 
     // Class constructor, takes 2 DNA samples, runs through every combination of chars between them
@@ -78,11 +78,6 @@ public class Sequencer {
             return count;
         }
         return count;
-    }
-
-    // Outputs matches list
-    public LinkedList<LinkedList<Integer>> getMatches() {
-        return matches;
     }
 
     // Outputs the top 10 matches of the two provided DNA samples

@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="427387b7-b0c4-4ccc-b6c4-91bf59d2029c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/LinkedHeap.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/squencing/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/squencing/Sequencer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/squencing/Sequencer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +200,7 @@
       <workItem from="1658513048546" duration="188000" />
       <workItem from="1658751440486" duration="6724000" />
       <workItem from="1658844374510" duration="525000" />
-      <workItem from="1659380742265" duration="4136000" />
+      <workItem from="1659380742265" duration="4464000" />
     </task>
     <task id="LOCAL-00001" summary="comments">
       <created>1658341524352</created>
@@ -230,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659384370208</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added comments">
+      <created>1659385752003</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659385752003</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +257,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="comments" />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
   </component>
 </project>

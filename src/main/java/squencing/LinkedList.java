@@ -139,8 +139,7 @@ public class LinkedList<T> {
             lastNode = last;
         }
         else if (node.equals(firstNode)) {
-            Node<T> next = node.getNextNode();
-            firstNode = next;
+            firstNode = node.getNextNode();
         }
         else {
             Node<T> next = node.getNextNode();
@@ -224,14 +223,9 @@ public class LinkedList<T> {
         numEntries = 0;
     }
 
+    // returns true if empty false is not empty
     public boolean isEmpty(){
-        boolean empty = false;
-
-        if(firstNode == null){
-            empty = true;
-        }
-
-        return empty;
+        return firstNode == null;
     }
 
     // Gets size of list

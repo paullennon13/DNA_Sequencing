@@ -15,39 +15,24 @@ public class Node<T> {
     }
 
     // Links next node
-    public boolean setNext(Node<T> nextNode) {
-        boolean result = false;
+    public void setNext(Node<T> nextNode) {
 
         if(nextNode == null){
             this.nextNode = null;
-            return true;
         }
 
         this.nextNode = nextNode;
-        result = nextNode.setLast(this);
-
-        return result;
+        nextNode.setLast(this);
     }
 
     // Links last node
-    public boolean setLast(Node<T> lastNode) {
-
+    public void setLast(Node<T> lastNode) {
         this.lastNode = lastNode;
-
-        return true;
     }
 
     // Sets User data
-    public boolean setData(T data) {
-        boolean result = false;
-
+    public void setData(T data) {
         this.data = data;
-
-        if(this.data.equals(data)) {
-            result = true;
-        }
-
-        return result;
     }
 
     // Gets next node
@@ -67,12 +52,7 @@ public class Node<T> {
 
     // Checks if two nodes have the same data
     public boolean equals(Node<T> aNode) {
-        if(data.equals(aNode.getData())) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return data.equals(aNode.getData());
     }
 
 }
