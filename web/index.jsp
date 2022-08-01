@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
 </head>
 <body>
-<h1 style="text-align: center">It works!</h1><br>
-<button type="button" class="alert button" onclick="alert('Hi!')">Push Me!</button>
+
+<% out.println("Hello world!"); %>
 
 </body>
 </html>

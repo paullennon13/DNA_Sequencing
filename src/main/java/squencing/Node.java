@@ -31,15 +31,10 @@ public class Node<T> {
 
     // Links last node
     public boolean setLast(Node<T> lastNode) {
-        boolean result = false;
 
         this.lastNode = lastNode;
 
-        if(this.lastNode.equals(lastNode)) {
-            result = true;
-        }
-
-        return result;
+        return true;
     }
 
     // Sets User data

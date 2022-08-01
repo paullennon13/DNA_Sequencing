@@ -14,26 +14,47 @@ public class Sequencer {
             this.dnaSequence = dnaSequence;
             this.dnaToMatch = dnaToMatch;
         }
-        for(int i =0; i < dnaSequence.length(); i++) {
-            LinkedList<Integer> temp = new LinkedList<>(sequence(i,0));
-            temp.addLast(i);
-            for(int j = 0; j < matches.getSize(); j++){
-                if(matches.get(0).get(0) == null){
-                    matches.add(temp, 0);
+        for(int i =0; i < dnaToMatch.length(); i++) {
+            for(int j = 0; j < dnaSequence.length(); j++){
+                int length = sequence(i,j);
+                if(length == 0){
+                    continue;
                 }
-                else if(temp.get(0).compareTo(matches.get(j).get(0)) > 0){
-                    matches.add(temp, j);
+                if(matches.getSize() == 0){
+                    LinkedList<Integer> temp = new LinkedList<>(length);
+                    temp.addLast(j);
+                    matches = new LinkedList<>(temp);
                 }
-                else if(temp.get(0).compareTo(matches.get(j).get(0)) == 0){
-                    matches.get(j).addLast(i);
+                for(int k = 0; k < matches.getSize(); k++){
+                    int matchLength = matches.get(k).get(0);
+                    if(matchLength == length){
+                        matches.get(k).addLast(j);
+                        break;
+                    }
+                    if(matchLength > length && k == matches.getSize() - 1){
+                        LinkedList<Integer> temp = new LinkedList<>(length);
+                        temp.addLast(j);
+                        matches.addLast(temp);
+                        break;
+                    }
+                    if(length > matchLength){
+                        LinkedList<Integer> temp = new LinkedList<>(length);
+                        temp.addLast(j);
+                        if (k == 0) {
+                            matches.addFirst(temp);
+                        }
+                        else {
+                            matches.add(temp, k - 1);
+                        }
+                        break;
+                    }
                 }
             }
         }
     }
 
-    public int sequence(int index, int index1){
+    private int sequence(int index, int index1){
         int count = 0;
-
         try {
             char a = dnaSequence.charAt(index1);
             char b = dnaToMatch.charAt(index);
@@ -41,7 +62,7 @@ public class Sequencer {
                 count++;
                 count += sequence(index + 1, index1 + 1);
             }
-        }catch(StringIndexOutOfBoundsException e){
+        } catch (StringIndexOutOfBoundsException e){
             return count;
         }
         return count;
@@ -61,22 +82,30 @@ public class Sequencer {
 
     public String toString(){
         StringBuilder string = new StringBuilder();
-        int j = 0;
+        int j = 2;
         int k = 1;
-        for(int i = 0; i < 10; i++){
-            if(matches.get(j) == null){
-                break;
-            }
-            else if(k > matches.get(j).getSize()){
-                k = 1;
-                j++;
-            }
-            int length = matches.get(j).get(0);
-            int startIndex = matches.get(j).get(k);
-            string.append(dnaSequence.substring(startIndex, (startIndex + length ) - 1));
-            k++;
+        if (matches.isEmpty()) {
+            return "No Matches found!";
         }
-
+        for(int i = 1; i <= 10; i++) {
+            string.append("Match number ")
+                    .append(i)
+                    .append(": ");
+            if (j > matches.get(k).getSize()) {
+                k++;
+                j = 2;
+            }
+                int length = matches.get(k).get(0);
+                int startIndex = matches.get(k).get(j);
+                if(length == 1){
+                    string.append(dnaSequence.charAt(startIndex));
+                }
+                else {
+                    string.append(dnaSequence, startIndex, startIndex + length);
+                }
+                j++;
+            string.append("\n");
+        }
         return string.toString();
     }
 }

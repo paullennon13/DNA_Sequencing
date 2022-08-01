@@ -25,7 +25,12 @@ public class LinkedList<T> {
     public void addFirst(T entry){
         Node<T> node = new Node<>(entry);
         node.setNext(firstNode);
-        firstNode.setLast(node);
+        if(firstNode != null) {
+            firstNode.setLast(node);
+        }
+        if(lastNode == null){
+            lastNode = node;
+        }
         firstNode = node;
         numEntries++;
     }
@@ -33,8 +38,13 @@ public class LinkedList<T> {
     // adds element to end of list
     public void addLast(T entry){
         Node<T> node = new Node<>(entry);
-        node.setLast(lastNode);
-        lastNode.setNext(node);
+        if(lastNode != null) {
+            node.setLast(lastNode);
+            lastNode.setNext(node);
+        }
+        if(firstNode == null){
+            firstNode = node;
+        }
         lastNode = node;
         numEntries++;
     }
@@ -55,10 +65,16 @@ public class LinkedList<T> {
         }
         lastNode = node.getLastNode();
         newNode.setNext(node);
-        newNode.setLast(node.getLastNode());
-        lastNode.setNext(newNode);
-        node.setLast(newNode);
 
+        if(lastNode == null){
+            firstNode = newNode;
+        }
+        else {
+            newNode.setLast(lastNode);
+            lastNode.setNext(newNode);
+        }
+        node.setLast(newNode);
+        numEntries++;
     }
 
     // Sets data at index
@@ -73,7 +89,6 @@ public class LinkedList<T> {
     // removes and returns first element of list
     public T removeFirst(){
         T data = firstNode.getData();
-        numEntries--;
 
         if(firstNode.getNextNode() != null){
             firstNode = firstNode.getNextNode();
@@ -82,13 +97,14 @@ public class LinkedList<T> {
 
         firstNode = null;
         lastNode = null;
+        numEntries--;
         return data;
     }
 
     // removes and returns last element of list
     public T removeLast(){
         T data = lastNode.getData();
-        numEntries--;
+
 
         if(lastNode.getLastNode() != null){
             lastNode = lastNode.getLastNode();
@@ -98,13 +114,14 @@ public class LinkedList<T> {
 
         firstNode = null;
         lastNode = null;
+        numEntries--;
         return data;
     }
 
     // removes and returns element at given index of list
     public T remove(int index){
         Node<T> node = firstNode;
-        numEntries--;
+
         for(int i = 0; i < index; i++){
 
             if(node.getNextNode() != null){
@@ -114,11 +131,23 @@ public class LinkedList<T> {
                 IndexOutOfBoundsException e = new IndexOutOfBoundsException(i);
                 throw new RuntimeException(e);
             }
+
         }
+
         Node<T> last = node.getLastNode();
-        Node<T> next = node.getNextNode();
-        last.setNext(next);
-        next.setLast(last);
+        if(node.equals(lastNode)){
+            lastNode = last;
+        }
+        else if (node.equals(firstNode)) {
+            Node<T> next = node.getNextNode();
+            firstNode = next;
+        }
+        else {
+            Node<T> next = node.getNextNode();
+            last.setNext(next);
+            next.setLast(last);
+        }
+        numEntries--;
         return node.getData();
     }
 
@@ -181,7 +210,7 @@ public class LinkedList<T> {
             throw new RuntimeException(e);
         }
 
-        for(int i = 0; i < index; i++){
+        for(int i = 1; i < index; i++){
             node = node.getNextNode();
         }
         return node.getData();
@@ -192,6 +221,16 @@ public class LinkedList<T> {
         firstNode = null;
         lastNode = null;
         numEntries = 0;
+    }
+
+    public boolean isEmpty(){
+        boolean empty = false;
+
+        if(firstNode == null){
+            empty = true;
+        }
+
+        return empty;
     }
 
     // Gets size of list
